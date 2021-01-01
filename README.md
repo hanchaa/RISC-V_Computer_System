@@ -1,2 +1,3 @@
-# RISC-V_Computer_System
-Implementing RISC-V Computer System using ZedBoard FPGA
+# RISC-V Computer System 
+
+This repository is for archiving lab intern at [ESCA lab](https://esca.korea.ac.kr) at Korea Univ.
