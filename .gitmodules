@@ -1,0 +1,6 @@
+[submodule "pulpissimo"]
+	path = pulpissimo
+	url = https://github.com/pulp-platform/pulpissimo
+[submodule "pulp-riscv-gnu-toolchain"]
+	path = pulp-riscv-gnu-toolchain
+	url = https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
