@@ -1,6 +1,8 @@
 [submodule "pulpissimo"]
 	path = pulpissimo
 	url = https://github.com/pulp-platform/pulpissimo
+	ignore = dirty
 [submodule "pulp-riscv-gnu-toolchain"]
 	path = pulp-riscv-gnu-toolchain
 	url = https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
+	ignore = dirty
