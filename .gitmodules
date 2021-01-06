@@ -6,3 +6,7 @@
 	path = pulp-riscv-gnu-toolchain
 	url = https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
 	ignore = dirty
+[submodule "pulp-runtime"]
+	path = pulp-runtime
+	url = https://github.com/pulp-platform/pulp-runtime/
+	ignore = dirty
