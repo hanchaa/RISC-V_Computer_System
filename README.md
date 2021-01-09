@@ -4,8 +4,8 @@
 
 이 저장소에 pulpissimo를 이용하면서 필요했던 저장소들을 submodule로 추가해두었습니다.
 
-```
-git clone --recursive https://github.com/hanchaa/RISC-V_Computer_System.git
+``` shell
+$ git clone --recursive https://github.com/hanchaa/RISC-V_Computer_System.git
 ```
 명령어를 통해 submodule까지 모두 다운 받을 수 있습니다.
 
@@ -19,26 +19,50 @@ git clone --recursive https://github.com/hanchaa/RISC-V_Computer_System.git
 <br>
 
 # Zedboard에 Pulpissimo 포팅하기
-Pulp platform에서는 puplpissimo를 위해서 simple runtime과 full featured runtime을 제공한다.
 
-이 문서에서는 우선 simple runtime을 사용할 예정이다.
+하드웨어 IP들을 받기 위해 pulpissimo 디렉토리로 이동하여 다음 스크립트를 실행한다.
 
-터미널에서 아래 명령어를 이용해 PULP runtime을 위한 system dependency 부터 설치한다. ([참고자료](https://github.com/pulp-platform/pulp-runtime/blob/master/README.md#linux-dependencies))
-
-```
-$ sudo apt install git python3-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev
-$ sudo pip3 install pyelftools
+``` shell
+$ cd ../pulpissimo
+$ ./update-ips
 ```
 
-다음으로 아래 명령어를 이용해 Pulp RISC-V GNU Compiler Toolchain을 위한 system dependency를 설치한다. ([참고자료](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites))
+이후 fpga 디렉토리로 이동해 zedboard를 위한 bitstream을 생성하기 위해 아래 명령어를 사용하면 된다.
 
+(이때 vivado: command not found 에러가 발생한다면 vivado 설치 폴더의 settings64.sh 파일을 실행시켰는지 확인한다.)
+
+``` shell
+$ cd fpga
+$ make zedboard
 ```
+
+bitstream 생성이 끝나면 vivado를 실행시킨 후 Hardware Manager > Open Target > Program device 순으로 실행시켜 Zedboard에 flashing을 하면 된다.
+
+![vivado](./images/1.png)
+
+![hardware_manager](./images/2.png)
+
+![target_setting](./images/3.png)
+
+![program_device](./images/4.png)
+
+![bitstream](./images/5.png)
+
+# FPGA를 위한 애플리케이션 컴파일
+
+우선 [Pulp RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites)을 설치해주어야 한다.
+
+이 저장소의 submodule로 toolchain을 저장해두었으며 root/pulp-riscv-gnu-toolchain 디렉토리로 이동하면 사용할 수 있다.
+
+아래 명령어를 이용해 Pulp RISC-V GNU Compiler Toolchain을 위한 system dependency를 설치한다. ([참고자료](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites))
+
+``` shell
 $ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev
 ```
 
 system dependency 설치 후, 위의 명령어를 이용해 toolchain을 설치할 수 있다. ([참고자료](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#installation-pulp))
 
-```
+``` shell
 $ cd pulp-riscv-gnu-toolchain
 $ ./configure --prefix={INSTALL_PATH} --with-arch=rv32imc --with-cmodel=medlow --enable-multilib
 $ sudo make
@@ -46,18 +70,17 @@ $ sudo make
 
 필자는 참고자료에 나온대로 /opt/riscv에 설치하였으며, 이 경우 설치 중 permission denined 문제가 발생하여 sudo 명령어를 이용하였다.
 
-하드웨어 IP들을 받기 위해 pulpissimo 디렉토리로 이동하여 다음 스크립트를 실행한다.
+toolchain 설치가 끝난 후 환경변수를 이용해 toolchain의 경로를 지정해준다.
 
+``` shell
+$ export PULP_RISCV_GCC_TOOLCHAIN={INSTALL_PATH}
 ```
-cd ../pulpissimo
-./update-ips
-```
 
-이후 fpga 디렉토리로 이동해 zedboard를 위한 bitstream을 생성하기 위해 아래 명령어를 사용하면 된다.
+다음으로 PULP-SDK를 설치하여야 하는데, [여기](https://github.com/pulp-platform/pulp-sdk/tree/v1#linux-dependencies)에 나온대로 system dependecy를 우선 설치한다.
 
-(이때 vivado: command not found 에러가 발생한다면 vivado 설치 폴더의 settings64.sh 파일을 실행시켰는지 확인한다.)
+대신 python2가 지원 종료되었으므로 configparser를 pip3로 install 하였다.
 
-```
-cd fpga
-make zedboard
+``` shell
+$ sudo apt install git python3-pip python-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev swig3.0 libjpeg-dev lsb-core doxygen python-sphinx sox graphicsmagick-libmagick-dev-compat libsdl2-dev libswitch-perl libftdi1-dev cmake scons libsndfile1-dev
+$ sudo pip3 install artifactory twisted prettytable sqlalchemy pyelftools 'openpyxl==2.6.4' xlsxwriter pyyaml numpy configparser pyvcd configparser
 ```
