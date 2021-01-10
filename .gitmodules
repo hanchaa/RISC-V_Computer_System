@@ -2,3 +2,11 @@
 	path = pulp-riscv-gnu-toolchain
 	url = https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
 	ignore = dirty
+[submodule "pulp-sdk"]
+	path = pulp-sdk
+	url = https://github.com/pulp-platform/pulp-sdk.git
+	ignore = dirty
+[submodule "pulp-rt-examples"]
+	path = pulp-rt-examples
+	url = https://github.com/pulp-platform/pulp-rt-examples.git
+	ignore = dirty
