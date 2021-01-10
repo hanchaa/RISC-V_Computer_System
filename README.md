@@ -36,7 +36,9 @@ $ cd fpga
 $ make zedboard
 ```
 
-bitstream 생성이 끝나면 vivado를 실행시킨 후 Hardware Manager > Open Target > Program device 순으로 실행시켜 Zedboard에 flashing을 하면 된다.
+bitstream 생성이 끝나면 fpga 폴더 안에 pulpissimo_zebdboard.bit 파일이 생성된다.
+
+이 파일을 vivado를 실행시킨 후 Hardware Manager > Open Target > Program device 순으로 실행시켜 Zedboard에 flashing을 하면 된다.
 
 ![vivado](./images/1.png)
 
@@ -84,3 +86,39 @@ $ export PULP_RISCV_GCC_TOOLCHAIN={INSTALL_PATH}
 $ sudo apt install git python3-pip python-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev swig3.0 libjpeg-dev lsb-core doxygen python-sphinx sox graphicsmagick-libmagick-dev-compat libsdl2-dev libswitch-perl libftdi1-dev cmake scons libsndfile1-dev
 $ sudo pip3 install artifactory twisted prettytable sqlalchemy pyelftools 'openpyxl==2.6.4' xlsxwriter pyyaml numpy configparser pyvcd configparser
 ```
+
+이후 pulp-sdk 디렉토리로 이동하여 sdk를 설치하여야 하는데, 현재 버전이 바뀌었기 때문에 구버전이 저장되어있는 v1 브랜치로 변경한 후 sdk를 설치하여야 한다.
+
+``` shell
+$ cd pulp-sdk
+$ git checkout v1
+$ source configs/pulpissimo.sh
+$ source configs/platform-fpga.sh
+$ make all
+```
+
+SDK 설치가 끝났으면 다음 명령어들을 실행시켜 애플리케이션 빌드를 위한 환경을 준비한다.
+
+``` shell
+// pulp-sdk 디렉토리 기준
+$ source configs/pulpissimo.sh
+$ source configs/fpga/pulpissimo/genesys2.sh
+$ source pkg/sdk/dev/sourceme.sh
+```
+
+이후 루트 디렉토리에서 pulp-rt-example 디렉토리로 이동하면 예제 프로그램들을 확인할 수 있다.
+
+예제 프로그램의 소스코드에서 전역 값으로 다음을 추가해준다.
+
+``` c
+int __rt_fpga_fc_frequency = 20000000;
+int __rt_fpga_periph_frequency = 10000000;
+```
+
+이후 다음 명령어를 실행시키면 어플리케이션이 빌드가 된다.
+
+``` shell
+$ make clean all
+```
+
+빌드가 끝나면 `build/pulpissimo/{app_name}/{app_name}`에 바이너리 파일이 있어야 하는데 왜 없지..?
