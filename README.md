@@ -14,7 +14,7 @@ $ git clone --recursive https://github.com/hanchaa/RISC-V_Computer_System.git
 # 실행 환경
 - Ubuntu 20.04LTS 
 - Python 3.8.5
-- Vivado 2020.2
+- Vivado 2018.3
 
 <br>
 
