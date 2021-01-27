@@ -1,468 +1,468 @@
 {
-    "ips_dir": "ips",
-    "rtl_dir": "rtl",
-    "vsim_dir": "sim",
-    "fpgasim_dir": "./fpga/sim",
     "ip_list": [
         {
-            "name": "common_verification",
-            "commit": "v0.1.1",
             "server": null,
+            "commit": "v0.1.1",
+            "domain": null,
             "group": null,
+            "alternatives": null,
             "path": "common_verification",
-            "domain": null,
-            "alternatives": null
+            "name": "common_verification"
         },
         {
-            "name": "common_cells",
+            "server": null,
             "commit": "v1.20.0",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "common_cells",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "common_cells"
         },
         {
-            "name": "L2_tcdm_hybrid_interco",
-            "commit": "pulpissimo-v1.0",
             "server": null,
+            "commit": "pulpissimo-v1.0",
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "L2_tcdm_hybrid_interco",
+            "name": "L2_tcdm_hybrid_interco"
+        },
+        {
+            "server": null,
+            "commit": "v1.1.0",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
-        },
-        {
-            "name": "cluster_interconnect",
-            "commit": "v1.1.0",
-            "server": null,
             "group": null,
+            "alternatives": null,
             "path": "cluster_interconnect",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "cluster_interconnect"
         },
         {
-            "name": "adv_dbg_if",
-            "commit": "v0.0.1",
             "server": null,
+            "commit": "v0.0.1",
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "adv_dbg_if",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "adv_dbg_if"
         },
         {
-            "name": "apb2per",
-            "commit": "v0.0.1",
             "server": null,
+            "commit": "v0.0.1",
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "apb/apb2per",
+            "name": "apb2per"
+        },
+        {
+            "server": null,
+            "commit": "v1.0.2",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
-        },
-        {
-            "name": "apb_adv_timer",
-            "commit": "v1.0.2",
-            "server": null,
             "group": null,
+            "alternatives": null,
             "path": "apb/apb_adv_timer",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "apb_adv_timer"
         },
         {
-            "name": "apb_fll_if",
+            "server": null,
             "commit": "pulpissimo-v1.0",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "apb/apb_fll_if",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "apb_fll_if"
         },
         {
-            "name": "apb_gpio",
+            "server": null,
             "commit": "0e9f142f2f11278445c953ad011fce1c7ed85b66",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "apb/apb_gpio",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "apb_gpio"
         },
         {
-            "name": "apb_node",
+            "server": null,
             "commit": "v0.1.1",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "apb/apb_node",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "apb_node"
         },
         {
-            "name": "apb_interrupt_cntrl",
+            "server": null,
             "commit": "v0.0.1",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "apb_interrupt_cntrl",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "apb_interrupt_cntrl"
         },
         {
-            "name": "axi",
+            "server": null,
             "commit": "v0.24.1",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "axi/axi",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "axi"
         },
         {
-            "name": "axi_slice",
+            "server": null,
             "commit": "v1.1.4",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "axi/axi_slice",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "axi_slice"
         },
         {
-            "name": "axi_slice_dc",
+            "server": null,
             "commit": "v1.1.3",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "axi/axi_slice_dc",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "axi_slice_dc"
         },
         {
-            "name": "timer_unit",
+            "server": null,
             "commit": "v1.0.2",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "timer_unit",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "timer_unit"
         },
         {
-            "name": "fpu_div_sqrt_mvp",
+            "server": null,
             "commit": "v1.0.4",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "fpu_div_sqrt_mvp",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "fpu_div_sqrt_mvp"
         },
         {
-            "name": "fpnew",
+            "server": null,
             "commit": "v0.6.5",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "fpnew",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "fpnew"
         },
         {
-            "name": "jtag_pulp",
-            "commit": "v0.1",
             "server": null,
+            "commit": "v0.1",
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "jtag_pulp",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "jtag_pulp"
         },
         {
-            "name": "riscv",
+            "server": null,
             "commit": "pulpissimo-v3.4.0",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "riscv",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "riscv"
         },
         {
-            "name": "ibex",
+            "server": null,
             "commit": "e65a27e14dda7bb3b09cadc4e9232305fd451cec",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": "lowRISC",
+            "alternatives": null,
             "path": "ibex",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "ibex"
         },
         {
-            "name": "scm",
+            "server": null,
             "commit": "v1.0.1",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "scm",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "scm"
         },
         {
-            "name": "generic_FLL",
-            "commit": "v0.1",
             "server": null,
+            "commit": "v0.1",
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "generic_FLL",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "generic_FLL"
         },
         {
-            "name": "tech_cells_generic",
+            "server": null,
             "commit": "v0.1.6",
-            "server": null,
+            "domain": [
+                "cluster",
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "tech_cells_generic",
-            "domain": [
-                "cluster",
-                "soc"
-            ],
-            "alternatives": null
+            "name": "tech_cells_generic"
         },
         {
-            "name": "udma_core",
-            "commit": "v1.0.0",
             "server": null,
+            "commit": "v1.0.0",
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_core",
+            "name": "udma_core"
+        },
+        {
+            "server": null,
+            "commit": "v1.0.0",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
-        },
-        {
-            "name": "udma_uart",
-            "commit": "v1.0.0",
-            "server": null,
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_uart",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "udma_uart"
         },
         {
-            "name": "udma_i2c",
+            "server": null,
             "commit": "vega_v1.0.0",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_i2c",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "udma_i2c"
         },
         {
-            "name": "udma_i2s",
+            "server": null,
             "commit": "v1.1.0",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_i2s",
+            "name": "udma_i2s"
+        },
+        {
+            "server": null,
+            "commit": "v1.0.0",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
-        },
-        {
-            "name": "udma_qspi",
-            "commit": "v1.0.0",
-            "server": null,
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_qspi",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "udma_qspi"
         },
         {
-            "name": "udma_sdio",
+            "server": null,
             "commit": "vega_v1.0.5",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_sdio",
+            "name": "udma_sdio"
+        },
+        {
+            "server": null,
+            "commit": "v1.0.0",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
-        },
-        {
-            "name": "udma_camera",
-            "commit": "v1.0.0",
-            "server": null,
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_camera",
+            "name": "udma_camera"
+        },
+        {
+            "server": null,
+            "commit": "v1.0.0",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
-        },
-        {
-            "name": "udma_filter",
-            "commit": "v1.0.0",
-            "server": null,
             "group": null,
+            "alternatives": null,
             "path": "udma/udma_filter",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "udma_filter"
         },
         {
-            "name": "udma_external_per",
+            "server": null,
             "commit": "v1.0.0",
-            "server": null,
-            "group": null,
-            "path": "udma/udma_external_per",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
+            "group": null,
+            "alternatives": null,
+            "path": "udma/udma_external_per",
+            "name": "udma_external_per"
         },
         {
-            "name": "hwpe-ctrl",
+            "server": null,
             "commit": "ec068eb",
-            "server": null,
+            "domain": null,
             "group": null,
+            "alternatives": null,
             "path": "hwpe-ctrl",
-            "domain": null,
-            "alternatives": null
+            "name": "hwpe-ctrl"
         },
         {
-            "name": "hwpe-stream",
+            "server": null,
             "commit": "1a9b04f",
-            "server": null,
-            "group": null,
-            "path": "hwpe-stream",
             "domain": null,
-            "alternatives": null
+            "group": null,
+            "alternatives": null,
+            "path": "hwpe-stream",
+            "name": "hwpe-stream"
         },
         {
-            "name": "hwpe-mac-engine",
-            "commit": "v1.2",
             "server": null,
-            "group": null,
-            "path": "hwpe-mac-engine",
+            "commit": "v1.2",
             "domain": [
                 "cluster",
                 "soc"
             ],
-            "alternatives": null
+            "group": null,
+            "alternatives": null,
+            "path": "hwpe-mac-engine",
+            "name": "hwpe-mac-engine"
         },
         {
-            "name": "riscv-dbg",
+            "server": null,
             "commit": "v0.2",
-            "server": null,
+            "domain": [
+                "soc"
+            ],
             "group": null,
+            "alternatives": null,
             "path": "riscv-dbg",
-            "domain": [
-                "soc"
-            ],
-            "alternatives": null
+            "name": "riscv-dbg"
         },
         {
-            "name": "register_interface",
-            "commit": "b1bc9c22e0c2a5801107070c022904498dbae34b",
             "server": null,
-            "group": null,
-            "path": "register_interface",
+            "commit": "b1bc9c22e0c2a5801107070c022904498dbae34b",
             "domain": [
                 "soc"
             ],
-            "alternatives": null
+            "group": null,
+            "alternatives": null,
+            "path": "register_interface",
+            "name": "register_interface"
         },
         {
-            "name": "pulp_soc",
+            "server": "https://github.com",
             "commit": "v2.0.1",
-            "server": "https://github.com",
-            "group": "pulp-platform",
-            "path": "pulp_soc",
             "domain": null,
-            "alternatives": null
+            "group": "pulp-platform",
+            "alternatives": null,
+            "path": "pulp_soc",
+            "name": "pulp_soc"
         },
         {
-            "name": "tbtools",
-            "commit": "v0.1",
             "server": "https://github.com",
-            "group": "pulp-platform",
-            "path": "tbtools",
+            "commit": "v0.1",
             "domain": null,
-            "alternatives": null
+            "group": "pulp-platform",
+            "alternatives": null,
+            "path": "tbtools",
+            "name": "tbtools"
         }
     ],
+    "rtl_dir": "rtl",
+    "ips_dir": "ips",
+    "fpgasim_dir": "./fpga/sim",
+    "vsim_dir": "sim",
     "rtl_list": [
         {
-            "name": "tb",
-            "commit": null,
             "server": null,
+            "commit": null,
+            "domain": null,
             "group": null,
+            "alternatives": null,
             "path": "tb",
-            "domain": null,
-            "alternatives": null
+            "name": "tb"
         },
         {
-            "name": "vip",
-            "commit": null,
             "server": null,
+            "commit": null,
+            "domain": null,
             "group": null,
+            "alternatives": null,
             "path": "vip",
-            "domain": null,
-            "alternatives": null
+            "name": "vip"
         },
         {
-            "name": "pulpissimo",
-            "commit": null,
             "server": null,
-            "group": null,
-            "path": "pulpissimo",
+            "commit": null,
             "domain": null,
-            "alternatives": null
+            "group": null,
+            "alternatives": null,
+            "path": "pulpissimo",
+            "name": "pulpissimo"
         }
     ]
 }
