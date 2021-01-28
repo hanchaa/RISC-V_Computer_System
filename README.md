@@ -95,6 +95,12 @@ rtl platform 외에도 fpga platform을 설정할 수 있으며, 그 경우 plat
 $ make all
 ```
 
+만약 build 중 ```No module named 'configparser'``` 에러가 발생하는 경우 아래 명령어를 이용해 configparser를 설치 후 다시 빌드를 하면 해결된다.
+
+``` shell
+$ sudo apt-get install python-configparser
+```
+
 <br>
 
 # Zedboard에 Pulpissimo 포팅하기
