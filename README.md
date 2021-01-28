@@ -12,9 +12,88 @@ $ git clone --recursive https://github.com/hanchaa/RISC-V_Computer_System.git
 <br>
 
 # 실행 환경
-- Ubuntu 20.04LTS 
-- Python 3.8.5
+- Ubuntu 16.04LTS
+- Python 2.7.12
+- Python 3.9.1
 - Vivado 2018.3
+- Modelsim 10.6c
+
+<br>
+
+# PULP RISC-V Toolchain 설치하기
+RISC-V용 프로그램을 빌드하기 위해서 RISC-V cross-compiler를 설치해주어야 한다.
+
+Toolchain은 submodule로 추가를 해두었으므로 pulp-riscv-gnu-toolchain 디렉토리로 이동하여 설치를 진행하면 된다.
+
+혹시 해당 폴더가 비어있다면, 다음 명령어를 이용해 submodule을 initialize 하도록 한다.
+
+``` shell
+$ git submodule update --init --recursive
+```
+
+설치를 진행하기 전, 아래 명령어를 이용해 dependency 부터 우선 설치하도록 한다.
+
+``` shell
+$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev
+```
+
+dependency 설치가 끝났으면 설치 폴더와 어떤 variation을 지원할지 설정 후 빌드 하면 된다.
+
+``` shell
+./configure --prefix=/opt/riscv --with-arch=rv32imc --with-cmodel=medlow --enable-multilib
+sudo make
+```
+
+--prefix의 옵션으로 설치 폴더를 지정하면 되며 필자는 /opt/riscv에 설치하였다.
+
+또한 --with-arch 옵션을 이용해 어떤 variation을 지원할지 고르면 된다.
+
+<br>
+
+# PULP SDK 설치하기
+PULP SDK 파일들은 submodule로 추가 해두었으므로 pulp-sdk 디렉토리로 이동하여 설치를 진행하면 된다.
+
+현재 PULP SDK가 업데이트가 이루어지면서 아직 최신버전의 PULP SDK는 pulpissimo를 지원하지 않는다.
+
+따라서 다음 명령어를 이용해 구 버전인 v1 branch에 있는 파일들을 사용해야 한다.
+
+``` shell
+$ git checkout v1
+```
+
+이후 sdk를 빌드 하기 전에 depedency부터 설치하여야 한다.
+
+만약 ubuntu 16.04 LTS의 기본 python3의 버전인 3.5.2를 사용한다면 numpy 설치가 불가능하므로, 다른 버전의 python3을 설치한 후 update-alternatives를 이용해 python3 명령어의 버전을 최신으로 바꾼 후 아래 과정을 진행하면 된다.
+
+아래 과정들을 진행 후 terminal을 끄기 전에 update-alternatives를 이용해 python3 명령어를 원래의 버전인 3.5.2로 변경하여야 system에 문제가 생기지 않으므로 주의하도록 해야한다. 
+
+``` shell
+$ sudo apt install git python3-pip python-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev swig3.0 libjpeg-dev lsb-core doxygen python-sphinx sox graphicsmagick-libmagick-dev-compat libsdl2-dev libswitch-perl libftdi1-dev cmake scons libsndfile1-dev
+$ sudo pip3 install artifactory twisted prettytable sqlalchemy pyelftools 'openpyxl==2.6.4' xlsxwriter pyyaml numpy configparser pyvcd
+$ sudo pip2 install configparser
+```
+
+다음으로 toolchain 경로와 vsim 경로를 설정해준다.
+
+``` shell
+$ export PULP_RISCV_GCC_TOOLCHAIN=/opt/riscv
+$ export VSIM_PATH={pulpissimo_root_path}/sim
+```
+
+다음으로 sdk의 target과 platform을 선택한다.
+
+``` shell
+$ source configs/pulpissimo.sh
+$ source configs/platform-rtl.sh
+```
+
+rtl platform 외에도 fpga platform을 설정할 수 있으며, 그 경우 platform-fpga.sh를 실행하면 된다.
+
+모든 설정이 끝났으면 아래 명령어를 이용해 sdk를 빌드 할 수 있다.
+
+``` shell
+$ make all
+```
 
 <br>
 
@@ -49,76 +128,3 @@ bitstream 생성이 끝나면 fpga 폴더 안에 pulpissimo_zebdboard.bit 파일
 ![program_device](./images/4.png)
 
 ![bitstream](./images/5.png)
-
-# FPGA를 위한 애플리케이션 컴파일
-
-우선 [Pulp RISC-V GNU Compiler Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites)을 설치해주어야 한다.
-
-이 저장소의 submodule로 toolchain을 저장해두었으며 root/pulp-riscv-gnu-toolchain 디렉토리로 이동하면 사용할 수 있다.
-
-아래 명령어를 이용해 Pulp RISC-V GNU Compiler Toolchain을 위한 system dependency를 설치한다. ([참고자료](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#prerequisites))
-
-``` shell
-$ sudo apt-get install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev
-```
-
-system dependency 설치 후, 위의 명령어를 이용해 toolchain을 설치할 수 있다. ([참고자료](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain#installation-pulp))
-
-``` shell
-$ cd pulp-riscv-gnu-toolchain
-$ ./configure --prefix={INSTALL_PATH} --with-arch=rv32imc --with-cmodel=medlow --enable-multilib
-$ sudo make
-```
-
-필자는 참고자료에 나온대로 /opt/riscv에 설치하였으며, 이 경우 설치 중 permission denined 문제가 발생하여 sudo 명령어를 이용하였다.
-
-toolchain 설치가 끝난 후 환경변수를 이용해 toolchain의 경로를 지정해준다.
-
-``` shell
-$ export PULP_RISCV_GCC_TOOLCHAIN={INSTALL_PATH}
-```
-
-다음으로 PULP-SDK를 설치하여야 하는데, [여기](https://github.com/pulp-platform/pulp-sdk/tree/v1#linux-dependencies)에 나온대로 system dependecy를 우선 설치한다.
-
-대신 python2가 지원 종료되었으므로 configparser를 pip3로 install 하였다.
-
-``` shell
-$ sudo apt install git python3-pip python-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev swig3.0 libjpeg-dev lsb-core doxygen python-sphinx sox graphicsmagick-libmagick-dev-compat libsdl2-dev libswitch-perl libftdi1-dev cmake scons libsndfile1-dev
-$ sudo pip3 install artifactory twisted prettytable sqlalchemy pyelftools 'openpyxl==2.6.4' xlsxwriter pyyaml numpy configparser pyvcd configparser
-```
-
-이후 pulp-sdk 디렉토리로 이동하여 sdk를 설치하여야 하는데, 현재 버전이 바뀌었기 때문에 구버전이 저장되어있는 v1 브랜치로 변경한 후 sdk를 설치하여야 한다.
-
-``` shell
-$ cd pulp-sdk
-$ git checkout v1
-$ source configs/pulpissimo.sh
-$ source configs/platform-fpga.sh
-$ make all
-```
-
-SDK 설치가 끝났으면 다음 명령어들을 실행시켜 애플리케이션 빌드를 위한 환경을 준비한다.
-
-``` shell
-// pulp-sdk 디렉토리 기준
-$ source configs/pulpissimo.sh
-$ source configs/fpga/pulpissimo/genesys2.sh
-$ source pkg/sdk/dev/sourceme.sh
-```
-
-이후 루트 디렉토리에서 pulp-rt-example 디렉토리로 이동하면 예제 프로그램들을 확인할 수 있다.
-
-예제 프로그램의 소스코드에서 전역 값으로 다음을 추가해준다.
-
-``` c
-int __rt_fpga_fc_frequency = 20000000;
-int __rt_fpga_periph_frequency = 10000000;
-```
-
-이후 다음 명령어를 실행시키면 어플리케이션이 빌드가 된다.
-
-``` shell
-$ make clean all
-```
-
-빌드가 끝나면 `build/pulpissimo/{app_name}/{app_name}`에 바이너리 파일이 있어야 하는데 왜 없지..?
