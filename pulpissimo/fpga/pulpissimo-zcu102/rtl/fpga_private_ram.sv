@@ -22,7 +22,8 @@
 
 module fpga_private_ram
   #(
-    parameter ADDR_WIDTH=12
+    parameter ADDR_WIDTH=12,
+    parameter NUM=0
     ) (
        input logic                  clk_i,
        input logic                  rst_ni,
@@ -43,8 +44,20 @@ module fpga_private_ram
       wea = '0;
     end
   end
-
-  xilinx_private_ram i_xilinx_private_ram
+  
+  if (NUM == 0)
+    xilinx_private_ram i_xilinx_private_ram
+    (
+     .clka(clk_i),
+     .ena(~csn_i),
+     .wea(wea),
+     .addra(addr_i),
+     .dina(wdata_i),
+     .douta(rdata_o)
+     );
+     
+  else if (NUM == 1)
+    xilinx_private_ram_1 i_xilinx_private_ram
     (
      .clka(clk_i),
      .ena(~csn_i),

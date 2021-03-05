@@ -1,0 +1,991 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 18195
+License: Customer
+
+Current time: 	Fri Mar 05 18:46:24 KST 2021
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Ubuntu
+OS Version: 4.15.0-136-generic
+OS Architecture: amd64
+Available processors (cores): 20
+
+Display: :0
+Screen size: 3840x2160
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 70 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/hanchaa/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4
+Java executable location: 	/home/hanchaa/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	hanchaa
+User home directory: /home/hanchaa
+User working directory: /home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/hanchaa/Xilinx/Vivado
+HDI_APPROOT: /home/hanchaa/Xilinx/Vivado/2018.3
+RDI_DATADIR: /home/hanchaa/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: /home/hanchaa/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: /home/hanchaa/.Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: /home/hanchaa/.Xilinx/Vivado/2018.3/
+Vivado layouts directory: /home/hanchaa/.Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	/home/hanchaa/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/vivado.log
+Vivado journal file location: 	/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-18195-hanchaa
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/hanchaa/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_BOARD: xilinx.com:zcu102:part0:3.2
+XILINX_DSP: /home/hanchaa/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PART: xczu9eg-ffvb1156-2-e
+XILINX_PLANAHEAD: /home/hanchaa/Xilinx/Vivado/2018.3
+XILINX_SDK: /home/hanchaa/Xilinx/SDK/2018.3
+XILINX_VIVADO: /home/hanchaa/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: /home/hanchaa/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	205 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 948 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// bx (cp):  Sourcing Tcl script 'tcl/run.tcl' : addNotify
+// TclEventType: FILE_SET_NEW
+// Tcl Message: source tcl/run.tcl 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/hanchaa/Xilinx/Vivado/2018.3/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 100 MB (+101884kb) [00:00:08]
+// [Engine Memory]: 1,013 MB (+910670kb) [00:00:08]
+// [GUI Memory]: 116 MB (+12168kb) [00:00:09]
+// WARNING: HEventQueue.dispatchEvent() is taking  1848 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,054 MB. GUI used memory: 58 MB. Current time: 3/5/21, 6:46:27 PM KST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: BOARD_MODIFIED
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 6500.020 ; gain = 153.930 ; free physical = 24368 ; free virtual = 28283 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_SOC_INTERCONNECT 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_LOW_LATENCY_INTERCO 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_PERIPHERAL_INTERCO 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_TCDM_INTERCONNECT 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_ADV_DBG_IF 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_APB2PER 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_APB_ADV_TIMER ## add_files -norecurse -scan_for_includes $SRC_APB_FLL_IF 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_APB_GPIO 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_APB_NODE 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_APB_INTERRUPT_CNTRL 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_AXI 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_AXI_SLICE 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_AXI_SLICE_DC 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_TIMER_UNIT 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_DIV_SQRT_TOP_MVP 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_FPNEW 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_JTAG_PULP 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_RISCV 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_RISCV_REGFILE_FPGA 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_IBEX 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [filemgmt 56-200] Setting project included file '/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/ibex/shared/rtl/prim_assert.sv' to type 'Verilog Header'. 
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_IBEX_REGFILE_FPGA 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_SCM_FPGA 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_TECH_CELLS_RTL_SYNTH 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_TECH_CELLS_FPGA 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_CORE 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_UART 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_I2C 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_I2S 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_QSPI 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_SDIO 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_CAMERA 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_FILTER 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_EXTERNAL_PER 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_HWPE_CTRL 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_HWPE_STREAM 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_HW_MAC_ENGINE 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_RISCV_DBG 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_REGISTER_INTERFACE 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,141 MB. GUI used memory: 59 MB. Current time: 3/5/21, 6:46:56 PM KST
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_REGGEN_PRIMITIVES 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_PULP_SOC 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_UDMA_SUBSYSTEM 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_FC 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## add_files -norecurse -scan_for_includes $SRC_COMPONENTS 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,142 MB (+81858kb) [00:00:43]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: # set FPGA_RTL rtl # set FPGA_IPS ips # remove_files $IPS/pulp_soc/rtl/components/axi_slice_dc_slave_wrap.sv 
+// Tcl Message: # remove_file $IPS/pulp_soc/rtl/components/axi_slice_dc_master_wrap.sv 
+// Tcl Message: # remove_file $IPS/tech_cells_generic/pad_functional_xilinx.sv 
+// Tcl Message: # add_files -norecurse $FPGA_RTL/fpga_private_ram.sv # add_files -norecurse $FPGA_RTL/fpga_bootrom.sv # add_files -norecurse $FPGA_RTL/pad_functional_xilinx.sv # add_files -norecurse $FPGA_RTL/pulp_clock_gating_xilinx.sv # set_property top xilinx_pulpissimo [current_fileset]; # update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: # add_files -fileset constrs_1 -norecurse $CONSTRS/$BOARD.xdc # synth_design -rtl -name rtl_1 -sfcu; 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 -sfcu Starting synth_design Using part: xczu9eg-ffvb1156-2-e Top: xilinx_pulpissimo 
+// TclEventType: ELABORATE_START
+// [Engine Memory]: 1,424 MB (+235733kb) [00:00:55]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,578 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:47:16 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,718 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:47:46 PM KST
+// [Engine Memory]: 2,721 MB (+1285736kb) [00:02:03]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,738 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:49:46 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,771 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:50:56 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,803 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:51:21 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,867 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:52:16 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,931 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:52:31 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 3,630 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:52:51 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,295 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:53:11 PM KST
+// TclEventType: ELABORATE_FINISH
+// HMemoryUtils.trashcanNow. Engine heap size: 4,759 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:53:31 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,855 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:53:56 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,495 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:54:21 PM KST
+// [Engine Memory]: 5,713 MB (+2995085kb) [00:08:22]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,729 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:54:46 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,826 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:55:11 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 6,896 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:55:26 PM KST
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// HMemoryUtils.trashcanNow. Engine heap size: 7,457 MB. GUI used memory: 59 MB. Current time: 3/5/21, 6:55:46 PM KST
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 7,489 MB. GUI used memory: 60 MB. Current time: 3/5/21, 6:56:16 PM KST
+// [Engine Memory]: 7,489 MB (+1562559kb) [00:10:01]
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 132 MB (+10283kb) [00:10:02]
+// Xgd.load filename: /home/hanchaa/Xilinx/Vivado/2018.3/data/parts/xilinx/zynquplus/devint/zynquplus/xczu9eg/xczu9eg.xgd; ZipEntry: xczu9eg_detail.xgd elapsed time: 0.9s
+// [GUI Memory]: 165 MB (+27555kb) [00:10:03]
+// [GUI Memory]: 184 MB (+11632kb) [00:10:04]
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2703 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 6699.418 ; gain = 16.465 ; free physical = 24108 ; free virtual = 28030 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'xilinx_pulpissimo' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/xilinx_pulpissimo.v:22] 
+// Tcl Message: 	Parameter CORE_TYPE bound to: 0 - type: integer  	Parameter USE_FPU bound to: 0 - type: integer  	Parameter USE_HWPE bound to: 0 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [/home/hanchaa/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:20866] 
+// Tcl Message: 	Parameter CAPACITANCE bound to: DONT_CARE - type: string  	Parameter DIFF_TERM bound to: FALSE - type: string  	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string  	Parameter IBUF_LOW_PWR bound to: FALSE - type: string  	Parameter IOSTANDARD bound to: LVDS - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [/home/hanchaa/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:20866] INFO: [Synth 8-6157] synthesizing module 'pulpissimo' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/rtl/pulpissimo/pulpissimo.sv:13] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'pad_frame' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/rtl/pulpissimo/pad_frame.sv:12] INFO: [Synth 8-6157] synthesizing module 'pad_functional_pd' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/pad_functional_xilinx.sv:12] INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/home/hanchaa/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:23615] 
+// Tcl Message: 	Parameter DRIVE bound to: 12 - type: integer  	Parameter IBUF_LOW_PWR bound to: TRUE - type: string  	Parameter IOSTANDARD bound to: DEFAULT - type: string  	Parameter SLEW bound to: SLOW - type: string  
+// Tcl Message: 	Parameter FLL_DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter FLL_ADDR_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter N_UART bound to: 32'b00000000000000000000000000000001  	Parameter N_SPI bound to: 32'b00000000000000000000000000000001  	Parameter N_I2C bound to: 32'b00000000000000000000000000000010  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'pad_control' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/rtl/pulpissimo/pad_control.sv:16] 
+// Tcl Message: 	Parameter N_UART bound to: 32'b00000000000000000000000000000001  	Parameter N_SPI bound to: 32'b00000000000000000000000000000001  	Parameter N_I2C bound to: 32'b00000000000000000000000000000010  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'pad_control' (6#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/rtl/pulpissimo/pad_control.sv:16] INFO: [Synth 8-6157] synthesizing module 'fpga_slow_clk_gen' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_slow_clk_gen.sv:24] 
+// Tcl Message: 	Parameter CLK_DIV_VALUE bound to: 256 - type: integer  	Parameter COUNTER_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'xilinx_slow_clk_mngr' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/.Xil/Vivado-18195-hanchaa/realtime/xilinx_slow_clk_mngr_stub.v:5] INFO: [Synth 8-6155] done synthesizing module 'xilinx_slow_clk_mngr' (7#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/.Xil/Vivado-18195-hanchaa/realtime/xilinx_slow_clk_mngr_stub.v:5] INFO: [Synth 8-6157] synthesizing module 'BUFGCE' [/home/hanchaa/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:619] 
+// Tcl Message: 	Parameter CE_TYPE bound to: SYNC - type: string  	Parameter IS_CE_INVERTED bound to: 1'b0  	Parameter IS_I_INVERTED bound to: 1'b0  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'BUFGCE' (8#1) [/home/hanchaa/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:619] INFO: [Synth 8-6155] done synthesizing module 'fpga_slow_clk_gen' (9#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_slow_clk_gen.sv:24] INFO: [Synth 8-6155] done synthesizing module 'safe_domain' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/rtl/pulpissimo/safe_domain.sv:12] INFO: [Synth 8-6157] synthesizing module 'soc_domain' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/rtl/pulpissimo/soc_domain.sv:13] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'pulp_soc' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/pulp_soc/pulp_soc.sv:14] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'AXI_BUS_ASYNC' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:249] 
+// Tcl Message: 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer  	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer  	Parameter AXI_ID_WIDTH bound to: 5 - type: integer  	Parameter AXI_USER_WIDTH bound to: 6 - type: integer  	Parameter BUFFER_WIDTH bound to: 8 - type: integer  	Parameter AXI_STRB_WIDTH bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'AXI_BUS_ASYNC' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:249] INFO: [Synth 8-6157] synthesizing module 'AXI_BUS_ASYNC' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:249] 
+// Tcl Message: 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer  	Parameter AXI_DATA_WIDTH bound to: 64 - type: integer  	Parameter AXI_ID_WIDTH bound to: 6 - type: integer  	Parameter AXI_USER_WIDTH bound to: 6 - type: integer  	Parameter BUFFER_WIDTH bound to: 8 - type: integer  	Parameter AXI_STRB_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'AXI_BUS_ASYNC' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:249] INFO: [Synth 8-6157] synthesizing module 'AXI_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:19] 
+// Tcl Message: 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer  	Parameter AXI_DATA_WIDTH bound to: 64 - type: integer  	Parameter AXI_ID_WIDTH bound to: 6 - type: integer  	Parameter AXI_USER_WIDTH bound to: 6 - type: integer  	Parameter AXI_STRB_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'AXI_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:19] INFO: [Synth 8-6157] synthesizing module 'AXI_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:19] 
+// Tcl Message: 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer  	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer  	Parameter AXI_ID_WIDTH bound to: 5 - type: integer  	Parameter AXI_USER_WIDTH bound to: 6 - type: integer  	Parameter AXI_STRB_WIDTH bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'AXI_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_intf.sv:19] INFO: [Synth 8-6157] synthesizing module 'FLL_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1192] 
+// Tcl Message: 	Parameter FLL_ADDR_WIDTH bound to: 32 - type: integer  	Parameter FLL_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'FLL_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1192] INFO: [Synth 8-6157] synthesizing module 'FLL_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1192] 
+// Tcl Message: 	Parameter FLL_ADDR_WIDTH bound to: 32 - type: integer  	Parameter FLL_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'FLL_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1192] INFO: [Synth 8-6157] synthesizing module 'FLL_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1192] 
+// Tcl Message: 	Parameter FLL_ADDR_WIDTH bound to: 32 - type: integer  	Parameter FLL_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'FLL_BUS' (10#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1192] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer  	Parameter AXI_DATA_WIDTH bound to: 64 - type: integer  	Parameter AXI_USER_WIDTH bound to: 6 - type: integer  	Parameter AXI_ID_WIDTH bound to: 6 - type: integer  	Parameter BUFFER_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'axi_slice_dc_master' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/axi_slice_dc_master.sv:11] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_token_ring_fifo_dout' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_dout.v:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 74 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_token_ring' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring.v:11] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 8 - type: integer  	Parameter RESET_VALUE bound to: 3 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring' (11#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring.v:11] INFO: [Synth 8-6157] synthesizing module 'dc_synchronizer' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_synchronizer.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 8 - type: integer  	Parameter RESET_VALUE bound to: 12 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_synchronizer' (12#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_synchronizer.v:11] INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_dout' (13#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_dout.v:11] INFO: [Synth 8-6157] synthesizing module 'axi_single_slice' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice/src/axi_single_slice.sv:12] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000001  	Parameter DATA_WIDTH bound to: 74 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v1.sv:14] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 74 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter THRESHOLD bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v2.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 74 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_EMPTY_TH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_FULL_TH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v3' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/fifo_v3.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 74 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 79 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_dout__parameterized0' (17#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_dout.v:11] INFO: [Synth 8-6157] synthesizing module 'axi_single_slice__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice/src/axi_single_slice.sv:12] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000001  	Parameter DATA_WIDTH bound to: 79 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v1.sv:14] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 79 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter THRESHOLD bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v2__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v2.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 79 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_EMPTY_TH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_FULL_TH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v3__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/fifo_v3.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 79 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 79 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_data_buffer' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 79 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'onehot_to_bin' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/onehot_to_bin.sv:13] 
+// Tcl Message: 	Parameter ONEHOT_WIDTH bound to: 8 - type: integer  	Parameter BIN_WIDTH bound to: 32'b00000000000000000000000000000011  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'onehot_to_bin' (18#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/onehot_to_bin.sv:13] INFO: [Synth 8-6155] done synthesizing module 'dc_data_buffer' (19#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] INFO: [Synth 8-6157] synthesizing module 'dc_token_ring__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring.v:11] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 8 - type: integer  	Parameter RESET_VALUE bound to: 12 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring__parameterized0' (19#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring.v:11] INFO: [Synth 8-6157] synthesizing module 'dc_full_detector' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_full_detector.v:11] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_synchronizer__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_synchronizer.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 1 - type: integer  	Parameter RESET_VALUE bound to: 1'b0  
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 14 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_data_buffer__parameterized0' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 14 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_data_buffer__parameterized0' (21#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_din__parameterized0' (21#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_din.v:11] INFO: [Synth 8-6155] done synthesizing module 'axi_slice_dc_master' (22#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/axi_slice_dc_master.sv:11] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'axi_slice_dc_master_wrap' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/axi_slice_dc_master_wrap.sv:33] INFO: [Synth 8-6157] synthesizing module 'axi_slice_dc_slave_wrap' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/axi_slice_dc_slave_wrap.sv:11] 
+// Tcl Message: 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer  	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer  	Parameter AXI_USER_WIDTH bound to: 6 - type: integer  	Parameter AXI_ID_WIDTH bound to: 5 - type: integer  	Parameter BUFFER_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'axi_slice_dc_slave' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/axi_slice_dc_slave.sv:11] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_token_ring_fifo_din__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_din.v:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 73 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_data_buffer__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 73 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_data_buffer__parameterized1' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_din__parameterized1' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_din.v:11] INFO: [Synth 8-6157] synthesizing module 'dc_token_ring_fifo_din__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_din.v:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 43 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'dc_data_buffer__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 43 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_data_buffer__parameterized2' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_data_buffer.sv:11] INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_din__parameterized2' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_din.v:11] INFO: [Synth 8-6157] synthesizing module 'dc_token_ring_fifo_dout__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_dout.v:11] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 46 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_dout__parameterized1' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_dout.v:11] INFO: [Synth 8-6157] synthesizing module 'axi_single_slice__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice/src/axi_single_slice.sv:12] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000001  	Parameter DATA_WIDTH bound to: 46 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v1.sv:14] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 46 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter THRESHOLD bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v2__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v2.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 46 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_EMPTY_TH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_FULL_TH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v3__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/fifo_v3.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 46 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 13 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'dc_token_ring_fifo_dout__parameterized2' (23#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/dc_token_ring_fifo_dout.v:11] INFO: [Synth 8-6157] synthesizing module 'axi_single_slice__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice/src/axi_single_slice.sv:12] 
+// Tcl Message: 	Parameter BUFFER_DEPTH bound to: 32'sb00000000000000000000000000000001  	Parameter DATA_WIDTH bound to: 13 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v1.sv:14] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 13 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter THRESHOLD bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v2__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/fifo_v2.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 13 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_EMPTY_TH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_FULL_TH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fifo_v3__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/fifo_v3.sv:13] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 13 - type: integer  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'axi_slice_dc_slave_wrap' (25#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi_slice_dc/src/axi_slice_dc_slave_wrap.sv:11] INFO: [Synth 8-6157] synthesizing module 'l2_ram_multi_bank' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/pulp_soc/l2_ram_multi_bank.sv:13] 
+// Tcl Message: 	Parameter NB_BANKS bound to: 4 - type: integer  	Parameter BANK_SIZE_INTL_SRAM bound to: 32'b00000000000000001000000000000000  	Parameter BANK_SIZE_PRI0 bound to: 32'b00000000000000000010000000000000  	Parameter BANK_SIZE_PRI1 bound to: 32'b00000000000000000010000000000000  	Parameter INTL_MEM_ADDR_WIDTH bound to: 32'b00000000000000000000000000001111  	Parameter PRI0_MEM_ADDR_WIDTH bound to: 32'b00000000000000000000000000001101  	Parameter PRI1_MEM_ADDR_WIDTH bound to: 32'b00000000000000000000000000001101  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fpga_interleaved_ram' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_interleaved_ram.sv:23] 
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 15 - type: integer  	Parameter NUM bound to: 0 - type: integer  
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 15 - type: integer  	Parameter NUM bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'fpga_interleaved_ram__parameterized0' (27#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_interleaved_ram.sv:23] INFO: [Synth 8-6157] synthesizing module 'fpga_interleaved_ram__parameterized1' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_interleaved_ram.sv:23] 
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 15 - type: integer  	Parameter NUM bound to: 2 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'fpga_interleaved_ram__parameterized1' (27#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_interleaved_ram.sv:23] INFO: [Synth 8-6157] synthesizing module 'fpga_interleaved_ram__parameterized2' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_interleaved_ram.sv:23] 
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 15 - type: integer  	Parameter NUM bound to: 3 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'fpga_interleaved_ram__parameterized2' (27#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_interleaved_ram.sv:23] INFO: [Synth 8-6157] synthesizing module 'fpga_private_ram' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_private_ram.sv:23] 
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 13 - type: integer  	Parameter NUM bound to: 0 - type: integer  
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 13 - type: integer  	Parameter NUM bound to: 1 - type: integer  
+// Tcl Message: 	Parameter ROM_ADDR_WIDTH bound to: 13 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'fpga_bootrom' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_bootrom.sv:24] 
+// Tcl Message: 	Parameter ADDR_WIDTH bound to: 11 - type: integer  	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter NUM_WORDS bound to: 2048 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'fpga_bootrom' (32#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/fpga_bootrom.sv:24] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'boot_rom' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/pulp_soc/boot_rom.sv:14] INFO: [Synth 8-6157] synthesizing module 'soc_peripherals' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/pulp_soc/soc_peripherals.sv:13] 
+// Tcl Message: 	Parameter MEM_ADDR_WIDTH bound to: 17 - type: integer  	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  	Parameter NB_CORES bound to: 0 - type: integer  	Parameter NB_CLUSTERS bound to: 0 - type: integer  	Parameter EVNT_WIDTH bound to: 8 - type: integer  	Parameter NGPIO bound to: 32 - type: integer  	Parameter NPAD bound to: 64 - type: integer  	Parameter NBIT_PADCFG bound to: 6 - type: integer  	Parameter NBIT_PADMUX bound to: 2 - type: integer  	Parameter N_UART bound to: 1 - type: integer  	Parameter N_SPI bound to: 1 - type: integer  	Parameter N_I2C bound to: 2 - type: integer  	Parameter UDMA_EVENTS bound to: 128 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Synth 8-6157] synthesizing module 'APB_BUS' [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'APB_BUS' (33#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/components/pulp_interfaces.sv:1151] 
+// Tcl Message: 	Parameter STAGES bound to: 32'b00000000000000000000000000000010  	Parameter STAGES bound to: 2 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'pulp_sync' (34#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/pulp_sync.sv:13] INFO: [Synth 8-6155] done synthesizing module 'pulp_clock_gating' (35#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/rtl/pulp_clock_gating_xilinx.sv:11] INFO: [Synth 8-6155] done synthesizing module 'pulp_sync_wedge' (36#1) [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/common_cells/src/deprecated/pulp_sync_wedge.sv:13] INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/apb/apb_fll_if/apb_fll_if.sv:130] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/apb/apb_fll_if/apb_fll_if.sv:238] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/apb/apb_fll_if/apb_fll_if.sv:285] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter PAD_NUM bound to: 32 - type: integer  	Parameter NBIT_PADCFG bound to: 6 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/apb/apb_gpio/rtl/apb_gpio.sv:276] 
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_uart/rtl/udma_uart_reg_if.sv:221] 
+// Tcl Message: 	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  	Parameter REPLAY_BUFFER_DEPTH bound to: 6 - type: integer  	Parameter BUFFER_WIDTH bound to: 8 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_qspi/rtl/udma_spim_reg_if.sv:218] 
+// Tcl Message: 	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 27 - type: integer  	Parameter BUFFER_DEPTH bound to: 4 - type: integer  	Parameter LOG_BUFFER_DEPTH bound to: 2 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_core/rtl/core/udma_tx_channels.sv:409] 
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_core/rtl/core/udma_stream_unit.sv:132] INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_core/rtl/core/udma_stream_unit.sv:154] 
+// Tcl Message: 	Parameter N bound to: 8 - type: integer  	Parameter S bound to: 3 - type: integer  
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 59 - type: integer  	Parameter BUFFER_DEPTH bound to: 4 - type: integer  	Parameter LOG_BUFFER_DEPTH bound to: 2 - type: integer  	Parameter DATA_WIDTH bound to: 38 - type: integer  	Parameter BUFFER_DEPTH bound to: 4 - type: integer  	Parameter LOG_BUFFER_DEPTH bound to: 2 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_core/rtl/core/udma_rx_channels.sv:468] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter N_PERIPHS bound to: 9 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  	Parameter N_PERIPHS bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_core/rtl/common/udma_ctrl.sv:101] 
+// Tcl Message: 	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_sdio/rtl/udma_sdio_reg_if.sv:232] 
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_sdio/rtl/sdio_txrx.sv:130] 
+// Tcl Message: 	Parameter STATUS_RSP_TIMEOUT bound to: 6'b000001  	Parameter STATUS_RSP_WRONG_DIR bound to: 6'b000010  	Parameter STATUS_RSP_BUSY_TIMEOUT bound to: 6'b000100  	Parameter RSP_TYPE_NULL bound to: 3'b000  	Parameter RSP_TYPE_48_CRC bound to: 3'b001  	Parameter RSP_TYPE_48_NOCRC bound to: 3'b010  	Parameter RSP_TYPE_136 bound to: 3'b011  	Parameter RSP_TYPE_48_BSY bound to: 3'b100  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_sdio/rtl/sdio_txrx_cmd.sv:142] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_sdio/rtl/sdio_txrx_cmd.sv:190] 
+// Tcl Message: 	Parameter STATUS_RSP_TIMEOUT bound to: 6'b000001  	Parameter RSP_TYPE_NULL bound to: 3'b000  	Parameter RSP_TYPE_48_CRC bound to: 3'b001  	Parameter RSP_TYPE_48_NOCRC bound to: 3'b010  	Parameter RSP_TYPE_136 bound to: 3'b011  	Parameter RSP_TYPE_48_BSY bound to: 3'b100  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_sdio/rtl/sdio_txrx_data.sv:442] 
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_i2s/rtl/udma_i2s_reg_if.sv:328] 
+// Tcl Message: 	Parameter STAGES bound to: 2 - type: integer  
+// Tcl Message: 	Parameter STAGES bound to: 5 - type: integer  	Parameter ACC_WIDTH bound to: 51 - type: integer  	Parameter WIDTH bound to: 51 - type: integer  	Parameter WIDTH bound to: 51 - type: integer  
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_i2s/rtl/cic_top.sv:138] 
+// Tcl Message: 	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  	Parameter DATA_WIDTH bound to: 8 - type: integer  	Parameter BUFFER_WIDTH bound to: 8 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_camera/rtl/camera_reg_if.sv:134] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 16 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  	Parameter DATA_WIDTH bound to: 16 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  	Parameter DATA_WIDTH bound to: 16 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  	Parameter DATA_WIDTH bound to: 16 - type: integer  	Parameter BUFFER_DEPTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_camera/rtl/camera_if.sv:232] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter FILTID_WIDTH bound to: 8 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter.sv:246] 
+// Tcl Message: 	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_reg_if.sv:194] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_reg_if.sv:376] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter FILTID_WIDTH bound to: 8 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter BUFFER_DEPTH bound to: 4 - type: integer  	Parameter LOG_BUFFER_DEPTH bound to: 2 - type: integer  	Parameter FIFO_WIDTH bound to: 34 - type: integer  	Parameter DATA_WIDTH bound to: 34 - type: integer  	Parameter BUFFER_DEPTH bound to: 4 - type: integer  	Parameter LOG_BUFFER_DEPTH bound to: 2 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_tx_datafetch.sv:297] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_au.sv:108] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_au.sv:119] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_bincu.sv:79] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter FILTID_WIDTH bound to: 8 - type: integer  	Parameter L2_AWIDTH_NOAL bound to: 19 - type: integer  	Parameter BUFFER_DEPTH bound to: 4 - type: integer  	Parameter TRANS_SIZE bound to: 20 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_rx_dataout.sv:126] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/udma/udma_filter/rtl/udma_filter_rx_dataout.sv:230] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter NB_CLUSTERS bound to: 0 - type: integer  	Parameter NB_CORES bound to: 0 - type: integer  	Parameter JTAG_REG_SIZE bound to: 32'b00000000000000000000000000001000  	Parameter NBIT_PADCFG bound to: 6 - type: integer  
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter EXTSIG_NUM bound to: 32 - type: integer  	Parameter TIMER_NBITS bound to: 16 - type: integer  	Parameter N_TIMEREXTSIG bound to: 48 - type: integer  	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/apb/apb_adv_timer/rtl/adv_timer_apb_if.sv:640] 
+// Tcl Message: 	Parameter NUM_BITS bound to: 16 - type: integer  	Parameter N_EXTSIG bound to: 48 - type: integer  	Parameter EXTSIG_NUM bound to: 48 - type: integer  	Parameter NUM_BITS bound to: 16 - type: integer  	Parameter NUM_BITS bound to: 16 - type: integer  	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  	Parameter PER_EVNT_NUM bound to: 160 - type: integer  	Parameter APB_EVNT_NUM bound to: 8 - type: integer  	Parameter EVNT_WIDTH bound to: 8 - type: integer  	Parameter FC_EVENT_POS bound to: 7 - type: integer  	Parameter EVNT_NUM bound to: 169 - type: integer  	Parameter QUEUE_SIZE bound to: 2 - type: integer  	Parameter EVNT_NUM bound to: 169 - type: integer  	Parameter S bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/pulp_soc/soc_event_generator.sv:214] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/pulp_soc/rtl/pulp_soc/soc_event_generator.sv:325] 
+// Tcl Message: 	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/timer_unit/rtl/apb_timer_unit.sv:110] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/timer_unit/rtl/apb_timer_unit.sv:214] 
+// Tcl Message: 	Parameter N_HWLP bound to: 2 - type: integer  	Parameter RDATA_WIDTH bound to: 32 - type: integer  	Parameter FPU bound to: 0 - type: integer  	Parameter DM_HaltAddress bound to: 437323776 - type: integer  	Parameter DEPTH bound to: 4 - type: integer  
+// Tcl Message: 	Parameter N_REGS bound to: 2 - type: integer  	Parameter FPU bound to: 0 - type: integer  
+// Tcl Message: 	Parameter FPU bound to: 0 - type: integer  
+// Tcl Message: 	Parameter PULP_SECURE bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_int_controller.sv:79] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_int_controller.sv:92] 
+// Tcl Message: 	Parameter LEN bound to: 32 - type: integer  	Parameter NUM_LEVELS bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_alu.sv:995] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_alu.sv:1078] 
+// Tcl Message: 	Parameter SHARED_DSP_MULT bound to: 0 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_mult.sv:145] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_mult.sv:316] INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_load_store_unit.sv:354] INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv/rtl/riscv_load_store_unit.sv:464] 
+// Tcl Message: 	Parameter PER_ID_WIDTH bound to: 32 - type: integer  	Parameter EVT_ID_WIDTH bound to: 8 - type: integer  	Parameter ENA_SEC_IRQ bound to: 1 - type: integer  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000001000  	Parameter DATA_DEPTH bound to: 32'b00000000000000000000000000000100  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000010  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/L2_tcdm_hybrid_interco/RTL/axi_2_lint/lint64_to_32.sv:112] 
+// Tcl Message: 	Parameter AXI4_ADDRESS_WIDTH bound to: 32 - type: integer  	Parameter AXI4_RDATA_WIDTH bound to: 64 - type: integer  	Parameter AXI4_WDATA_WIDTH bound to: 64 - type: integer  	Parameter AXI4_ID_WIDTH bound to: 6 - type: integer  	Parameter AXI4_USER_WIDTH bound to: 6 - type: integer  	Parameter AXI_NUMBYTES bound to: 8 - type: integer  	Parameter MEM_ADDR_WIDTH bound to: 32 - type: integer  	Parameter OFFSET_BIT bound to: 3 - type: integer  
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/L2_tcdm_hybrid_interco/RTL/axi_2_lint/axi_read_ctrl.sv:148] 
+// Tcl Message: INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_demux.sv:581] 
+// Tcl Message: 	Parameter WIDTH bound to: 32'b00000000000000000000000000000001  	Parameter STICKY_OVERFLOW bound to: 1'b0  
+// Tcl Message: INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_demux.sv:581] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b1  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 1 - type: integer  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 1 - type: integer  
+// Tcl Message: 	Parameter AxiIdWidth bound to: 1 - type: integer  	Parameter Resp bound to: 2'b11  	Parameter RespWidth bound to: 64 - type: integer  	Parameter RespData bound to: 64'b1100101000010001101010110001111010111010110111001010101100011110  	Parameter ATOPs bound to: 1'b1  	Parameter MaxTrans bound to: 32'b00000000000000000000000000000100  	Parameter AxiIdWidth bound to: 1 - type: integer  	Parameter AxiMaxWriteTxns bound to: 32'b00000000000000000000000000000100  	Parameter COUNTER_WIDTH bound to: 32'b00000000000000000000000000000011  
+// Tcl Message: INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_atop_filter.sv:117] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_atop_filter.sv:267] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000001000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_EMPTY_TH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_FULL_TH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000001000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_atop_filter.sv:117] INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_atop_filter.sv:267] 
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b1  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: 	Parameter AxiIdWidth bound to: 32'b00000000000000000000000000000101  	Parameter Resp bound to: 2'b10  	Parameter RespWidth bound to: 64 - type: integer  	Parameter RespData bound to: 64'b1100101000010001101010110001111010111010110111001010101100011110  	Parameter ATOPs bound to: 1'b0  	Parameter MaxTrans bound to: 32'b00000000000000000000000000000001  	Parameter FALL_THROUGH bound to: 1'b1  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000010  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000010  	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_burst_splitter.sv:402] INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_burst_splitter.sv:188] 
+// Tcl Message: 	Parameter IdWidth bound to: 32'b00000000000000000000000000000101  	Parameter MaxTxns bound to: 32'b00000000000000000000000000000001  
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_burst_splitter.sv:402] INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_burst_splitter.sv:272] 
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/axi/axi/src/axi_lite_to_apb.sv:242] 
+// Tcl Message: 	Parameter IdcodeValue bound to: 613749187 - type: integer  	Parameter IrLength bound to: 32'sb00000000000000000000000000000101  	Parameter IdcodeValue bound to: 613749187 - type: integer  
+// Tcl Message: INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/riscv-dbg/src/dmi_jtag_tap.sv:202] 
+// Tcl Message: 	Parameter CLK_SEL_TYPE bound to: SYNC - type: string  
+// Tcl Message: 	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000010  	Parameter ALM_EMPTY_TH bound to: 32'b00000000000000000000000000000001  	Parameter ALM_FULL_TH bound to: 32'b00000000000000000000000000000001  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FALL_THROUGH bound to: 1'b0  	Parameter DATA_WIDTH bound to: 32'b00000000000000000000000000100000  	Parameter DEPTH bound to: 32'b00000000000000000000000000000010  	Parameter ADDR_DEPTH bound to: 32'b00000000000000000000000000000001  	Parameter FifoDepth bound to: 32'b00000000000000000000000000000010  
+// Tcl Message: INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/jtag_pulp/src/tap_top.v:515] INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/jtag_pulp/src/tap_top.v:540] 
+// Tcl Message: 	Parameter JTAGREGSIZE bound to: 9 - type: integer  	Parameter SYNC bound to: 0 - type: integer  	Parameter ADDRESS_WIDTH bound to: 32 - type: integer  	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter ADDR_WIDTH bound to: 32 - type: integer  	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter AUX_WIDTH bound to: 6 - type: integer  	Parameter ADDR_WIDTH bound to: 32 - type: integer  	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter AUX_WIDTH bound to: 6 - type: integer  	Parameter ADDR_WIDTH bound to: 32 - type: integer  	Parameter DATA_WIDTH bound to: 32 - type: integer  	Parameter AUX_WIDTH bound to: 6 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/adv_dbg_if/rtl/adbg_lint_biu.sv:372] 
+// Tcl Message: 	Parameter PER_ADDR_WIDTH bound to: 32 - type: integer  	Parameter APB_ADDR_WIDTH bound to: 32 - type: integer  
+// Tcl Message: INFO: [Synth 8-226] default block is never used [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/ips/apb/apb2per/apb2per.sv:86] 
+// Tcl Message: INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:03:11 ; elapsed = 00:03:05 . Memory (MB): peak = 8174.465 ; gain = 1491.512 ; free physical = 23041 ; free virtual = 27038 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:03:16 ; elapsed = 00:03:11 . Memory (MB): peak = 8174.465 ; gain = 1491.512 ; free physical = 23173 ; free virtual = 27170 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:03:16 ; elapsed = 00:03:11 . Memory (MB): peak = 8174.465 ; gain = 1491.512 ; free physical = 23173 ; free virtual = 27170 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers. 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_clk_mngr/ip/xilinx_clk_mngr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/xilinx_pulpissimo_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/xilinx_pulpissimo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/xilinx_pulpissimo_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/xilinx_pulpissimo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. INFO: [Timing 38-2] Deriving generated clocks 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.21 . Memory (MB): peak = 12907.805 ; gain = 16.008 ; free physical = 18037 ; free virtual = 22098 write_xdc: Time (s): cpu = 00:00:30 ; elapsed = 00:00:06 . Memory (MB): peak = 12907.805 ; gain = 189.008 ; free physical = 18037 ; free virtual = 22098 
+// Tcl Message: Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/constraints/zcu102.xdc] 
+// Tcl Message: Finished Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/constraints/zcu102.xdc] 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/constraints/zcu102.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/xilinx_pulpissimo_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/xilinx_pulpissimo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.21 . Memory (MB): peak = 12923.812 ; gain = 16.008 ; free physical = 17909 ; free virtual = 21970 
+// Tcl Message: Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr_late.xdc] for cell 'i_pulpissimo/safe_domain_i/i_slow_clk_gen/i_slow_clk_mngr/inst' Finished Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr_late.xdc] for cell 'i_pulpissimo/safe_domain_i/i_slow_clk_gen/i_slow_clk_mngr/inst' Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.21 . Memory (MB): peak = 12923.812 ; gain = 0.000 ; free physical = 19390 ; free virtual = 23446 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 12 instances were transformed.   BUFGMUX => BUFGCTRL (inverted pins: CE0): 1 instances   IBUF => IBUF (IBUFCTRL, INBUF): 1 instances   IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instances   IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 9 instances  
+typeControlKey(null, null, 'z');
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:10:34 ; elapsed = 00:09:16 . Memory (MB): peak = 12943.332 ; gain = 6260.379 ; free physical = 19759 ; free virtual = 23818 
+// Tcl Message: 419 Infos, 310 Warnings, 0 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:10:37 ; elapsed = 00:09:19 . Memory (MB): peak = 12943.332 ; gain = 6260.379 ; free physical = 19759 ; free virtual = 23818 
+// Tcl Message: # set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1] # set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value -sfcu -objects [get_runs synth_1] ; # launch_runs synth_1 -jobs $CPUS 
+// Tcl Message: [Fri Mar  5 18:56:24 2021] Launched synth_1... Run output will be captured here: /home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/pulpissimo-zcu102.runs/synth_1/runme.log 
+// Tcl Message: # wait_on_run synth_1 
+// Tcl Message: [Fri Mar  5 18:56:24 2021] Waiting for synth_1 to finish... 
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 6.7s
+// Tcl Message: [Fri Mar  5 18:56:29 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:56:34 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:56:39 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:56:49 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:56:59 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:57:09 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:57:19 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:57:39 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:57:59 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:58:19 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:58:39 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:59:19 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 18:59:59 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:00:39 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:01:19 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:02:39 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:03:59 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:05:19 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:06:39 2021] Waiting for synth_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:09:19 2021] Waiting for synth_1 to finish... 
+// TclEventType: RUN_COMPLETED
+// Tcl Message: [Fri Mar  5 19:11:00 2021] synth_1 finished 
+// Tcl Message: wait_on_run: Time (s): cpu = 00:14:58 ; elapsed = 00:14:36 . Memory (MB): peak = 13090.402 ; gain = 147.070 ; free physical = 19728 ; free virtual = 23844 
+// Tcl Message: # open_run synth_1 -name netlist_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xczu9eg-ffvb1156-2-e 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 7,625 MB. GUI used memory: 135 MB. Current time: 3/5/21, 7:11:16 PM KST
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 7,625 MB. GUI used memory: 135 MB. Current time: 3/5/21, 7:11:17 PM KST
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 195 MB (+1846kb) [00:25:01]
+// Device: addNotify
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 1.3s
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1172 ms.
+// Tcl Message: Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_clk_mngr/ip/xilinx_clk_mngr_board.xdc] for cell 'i_pulpissimo/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fpga_clk_gen/i_clk_manager/inst' Finished Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_clk_mngr/ip/xilinx_clk_mngr_board.xdc] for cell 'i_pulpissimo/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fpga_clk_gen/i_clk_manager/inst' Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_clk_mngr/ip/xilinx_clk_mngr.xdc] for cell 'i_pulpissimo/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fpga_clk_gen/i_clk_manager/inst' 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_clk_mngr/ip/xilinx_clk_mngr.xdc:57] INFO: [Timing 38-2] Deriving generated clocks [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_clk_mngr/ip/xilinx_clk_mngr.xdc:57] 
+// Tcl Message: get_clocks: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 13090.402 ; gain = 0.000 ; free physical = 19284 ; free virtual = 23401 
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Timing 38-2] Deriving generated clocks [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr.xdc:57] 
+// Tcl Message: Finished Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr.xdc] for cell 'i_pulpissimo/safe_domain_i/i_slow_clk_gen/i_slow_clk_mngr/inst' Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/constraints/zcu102.xdc] 
+// Tcl Message: Finished Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/constraints/zcu102.xdc] Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr_late.xdc] for cell 'i_pulpissimo/safe_domain_i/i_slow_clk_gen/i_slow_clk_mngr/inst' Finished Parsing XDC File [/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/ips/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr_late.xdc] for cell 'i_pulpissimo/safe_domain_i/i_slow_clk_gen/i_slow_clk_mngr/inst' 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 13090.402 ; gain = 0.000 ; free physical = 19360 ; free virtual = 23477 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 24 instances were transformed.   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 10 instances   IBUF => IBUF (IBUFCTRL, INBUF): 4 instances   IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instances   IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 9 instances  
+// Device view-level: 0.0
+// Tcl Message: open_run: Time (s): cpu = 00:00:33 ; elapsed = 00:00:19 . Memory (MB): peak = 13159.438 ; gain = 69.035 ; free physical = 19132 ; free virtual = 23249 
+// Tcl Message: # set_property needs_refresh false [get_runs synth_1] 
+// TclEventType: NETLIST_UPDATE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 19131 ; free virtual = 23248 
+// Tcl Message: INFO: [Timing 38-480] Writing timing data to binary archive. 
+// Tcl Message: Writing placer database... Writing XDEF routing. Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Write XDEF Complete: Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.11 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 19105 ; free virtual = 23231 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 19108 ; free virtual = 23237 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Mar  5 19:11:30 2021] Launched impl_1... Run output will be captured here: /home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/pulpissimo-zcu102.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 19178 ; free virtual = 23306 
+// Tcl Message: # wait_on_run impl_1 
+// Tcl Message: [Fri Mar  5 19:11:30 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:11:35 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:11:40 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:11:45 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:11:55 2021] Waiting for impl_1 to finish... 
+// TclEventType: RUN_STEP_COMPLETED
+// Tcl Message: [Fri Mar  5 19:12:05 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:12:15 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:12:25 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:12:45 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:13:05 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:13:25 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:13:45 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:14:25 2021] Waiting for impl_1 to finish... 
+// [GUI Memory]: 206 MB (+1528kb) [00:28:09]
+// Tcl Message: [Fri Mar  5 19:15:06 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:15:46 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:16:26 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:17:46 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:19:06 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:20:26 2021] Waiting for impl_1 to finish... 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Mar  5 19:20:35 2021] impl_1 finished 
+// Tcl Message: wait_on_run: Time (s): cpu = 00:00:24 ; elapsed = 00:09:05 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 18902 ; free virtual = 23296 
+// Tcl Message: # launch_runs impl_1 -jobs $CPUS -to_step write_bitstream 
+// Tcl Message: [Fri Mar  5 19:20:35 2021] Launched impl_1... Run output will be captured here: /home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/pulpissimo-zcu102.runs/impl_1/runme.log 
+// Tcl Message: # wait_on_run impl_1 
+// Tcl Message: [Fri Mar  5 19:20:35 2021] Waiting for impl_1 to finish... 
+// HMemoryUtils.trashcanNow. Engine heap size: 7,662 MB. GUI used memory: 149 MB. Current time: 3/5/21, 7:20:37 PM KST
+// Tcl Message: [Fri Mar  5 19:20:40 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:20:45 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:20:50 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:21:00 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:21:10 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:21:20 2021] Waiting for impl_1 to finish... 
+// Tcl Message: [Fri Mar  5 19:21:30 2021] Waiting for impl_1 to finish... 
+// TclEventType: RUN_COMPLETED
+// Tcl Message: [Fri Mar  5 19:21:35 2021] impl_1 finished 
+// Tcl Message: wait_on_run: Time (s): cpu = 00:00:05 ; elapsed = 00:01:00 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 18075 ; free virtual = 22525 
+// Tcl Message: # open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 7,705 MB. GUI used memory: 151 MB. Current time: 3/5/21, 7:21:46 PM KST
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 7,705 MB. GUI used memory: 151 MB. Current time: 3/5/21, 7:21:47 PM KST
+// TclEventType: DESIGN_NEW
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1091 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 2482 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2018.3 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 18394 ; free virtual = 22845 
+// Tcl Message: Restored from archive | CPU: 2.380000 secs | Memory: 63.579002 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 18394 ; free virtual = 22845 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 18403 ; free virtual = 22854 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 23 instances were transformed.   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 10 instances   IBUF => IBUF (IBUFCTRL, INBUF): 4 instances   IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instances   IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 8 instances  
+// Device view-level: 0.0
+// Tcl Message: open_run: Time (s): cpu = 00:01:31 ; elapsed = 00:00:13 . Memory (MB): peak = 13159.438 ; gain = 0.000 ; free physical = 18285 ; free virtual = 22736 
+// Tcl Message: # exec mkdir -p reports/ # exec rm -rf reports/* # check_timing                                                              -file reports/$PROJECT.check_timing.rpt 
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 5.4s
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: # report_timing -max_paths 100 -nworst 100 -delay_type max -sort_by slack   -file reports/$PROJECT.timing_WORST_100.rpt 
+// Tcl Message: INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+// Tcl Message: INFO: [Timing 38-78] ReportTimingParams: -max_paths 100 -nworst 100 -delay_type max -sort_by slack. 
+// Tcl Message: # report_timing -nworst 1 -delay_type max -sort_by group                    -file reports/$PROJECT.timing.rpt 
+// Tcl Message: INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by group. 
+// Tcl Message: # report_utilization -hierarchical                                          -file reports/$PROJECT.utilization.rpt 
+// TclEventType: NETLIST_UPDATE
+// TclEventType: STOP_PROGRESS_DIALOG
+// [GUI Memory]: 217 MB (+646kb) [00:35:41]
+// Elapsed time: 1535 seconds
+dismissDialog("Sourcing Tcl script 'tcl/run.tcl'"); // bx (cp)
+// TclEventType: STOP_PROGRESS_DIALOG
+// HMemoryUtils.trashcanNow. Engine heap size: 7,760 MB. GUI used memory: 162 MB. Current time: 3/5/21, 7:21:59 PM KST
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [Engine Memory]: 7,921 MB (+60019kb) [00:35:49]
+// RouteApi::initDelayMediator elapsed time: 15.7s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// RouteApi::initDelayMediator elapsed time: 16.8s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// HMemoryUtils.trashcanNow. Engine heap size: 7,979 MB. GUI used memory: 164 MB. Current time: 3/5/21, 7:52:01 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 7,979 MB. GUI used memory: 159 MB. Current time: 3/5/21, 8:22:01 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 7,979 MB. GUI used memory: 192 MB. Current time: 3/5/21, 8:42:26 PM KST
+// Device view-level: 0.3
+// [GUI Memory]: 237 MB (+9826kb) [01:56:10]
+// [GUI Memory]: 251 MB (+1865kb) [01:56:10]
+// [Engine Memory]: 8,661 MB (+360681kb) [01:56:10]
+// HMemoryUtils.trashcanNow. Engine heap size: 8,661 MB. GUI used memory: 252 MB. Current time: 3/5/21, 8:42:28 PM KST
+// [GUI Memory]: 265 MB (+1116kb) [01:56:25]
+// Elapsed time: 4845 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 48, true); // u (Q, cp) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bx (cp):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: open_hw 
+dismissDialog("Open Hardware Manager"); // bx (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 8,395 MB. GUI used memory: 208 MB. Current time: 3/5/21, 8:42:46 PM KST
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cQ, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bx (cp):  Auto Connect : addNotify
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.3   **** Build date : Dec  6 2018-23:53:53     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210308A1C7AB 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  1117 ms.
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/pulpissimo-zcu102.runs/impl_1/xilinx_pulpissimo.bit} [get_hw_devices xczu9_0] 
+// Tcl Message: current_hw_device [get_hw_devices xczu9_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xczu9_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xczu9 (JTAG device index = 0) is not programmed (DONE status = 0). 
+// Tcl Message: current_hw_device [get_hw_devices arm_dap_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices arm_dap_1] 0] 
+// Tcl Message: current_hw_device [get_hw_devices xczu9_0] 
+dismissDialog("Auto Connect"); // bx (cp)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cQ, cp)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cp): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bx (cp):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cp)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xczu9_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xczu9_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/pulpissimo-zcu102.runs/impl_1/xilinx_pulpissimo.bit} [get_hw_devices xczu9_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xczu9_0] 
+// Tcl Message: ERROR: [Labtools 27-3303] Incorrect bitstream assigned to device. Bitstream was generated for part xczu9eg-ffvb1156-2-e, target device (with IDCODE revision 1) is compatible with es2 revision bitstreams. To allow the bitstream to be programmed to the device, use "set_param xicom.use_bitstream_version_check false" tcl command. ERROR: [Labtools 27-3165] End of startup status: LOW 
+// Tcl Message: ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.  (Program Device)'
+// 'I' command handler elapsed time: 4 seconds
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // JButton (C, I)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 545, 45); // dr (af, cp)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 602, 57); // dr (af, cp)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 539, 48); // dr (af, cp)
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // dr (af, cp)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set_param xicom.use_bitstream_version_check false", true); // aC (Z, cp)
+// Tcl Command: 'set_param xicom.use_bitstream_version_check false'
+// Tcl Command: 'set_param xicom.use_bitstream_version_check false'
+// Tcl Message: set_param xicom.use_bitstream_version_check false 
+// Tcl Message: 0 
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cQ, cp)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cp): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bx (cp):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cp)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xczu9_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xczu9_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/hanchaa/Desktop/RISC-V_Computer_System/pulpissimo/fpga/pulpissimo-zcu102/pulpissimo-zcu102.runs/impl_1/xilinx_pulpissimo.bit} [get_hw_devices xczu9_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xczu9_0] 
+// HMemoryUtils.trashcanNow. Engine heap size: 8,800 MB. GUI used memory: 211 MB. Current time: 3/5/21, 8:43:26 PM KST
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: program_hw_devices: Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 13719.930 ; gain = 0.000 ; free physical = 17421 ; free virtual = 21768 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xczu9_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xczu9 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 16 seconds
+// Elapsed time: 15 seconds
+dismissDialog("Program Device"); // bx (cp)
+// Elapsed time: 33 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cp)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// A (cp): Confirm Close: addNotify
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // g (Q, A): FALSE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bx (cp):  Close Hardware Manager : addNotify
+dismissDialog("Confirm Close"); // A (cp)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw 
+dismissDialog("Close Hardware Manager"); // bx (cp)
