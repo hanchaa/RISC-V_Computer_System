@@ -136,7 +136,7 @@ $ cd ../pulpissimo
 $ ./update-ips
 ```
 
-이후 fpga 디렉토리로 이동해 zedboard를 위한 bitstream을 생성하기 위해 아래 명령어를 사용하면 된다.
+이후 fpga 디렉토리로 이동해 zcu102를 위한 bitstream을 생성하기 위해 아래 명령어를 사용하면 된다.
 
 (이때 vivado: command not found 에러가 발생한다면 vivado 설치 폴더의 settings64.sh 파일을 실행시켰는지 확인한다.)
 
@@ -145,7 +145,7 @@ $ cd fpga
 $ make zcu-102
 ```
 
-bitstream 생성이 끝나면 fpga 폴더 안에 pulpissimo_zebdboard.bit 파일이 생성된다.
+bitstream 생성이 끝나면 fpga 폴더 안에 pulpissimo_zcu102.bit 파일이 생성된다.
 
 이 파일을 vivado를 실행시킨 후 Hardware Manager > Open Target > Program device 순으로 실행시켜 Zedboard에 flashing을 하면 된다.
 
@@ -236,7 +236,7 @@ $ source pkg/openocd/sourceme.sh
 
 이후 다음 명령어를 실행하고 다음과 같은 화면이 나오면 JTAG을 이용해 ZCU102 보드에 포팅 된 pulpissimo를 디버깅 할 수 있다.
 ```shell
-$ $OPENOCD/bin/openocd -f pulpissimo/fpg/pulpissimo-zcu102/openocd-zcu102-digilent-jtag-hs2.cfg
+$ $OPENOCD/bin/openocd -f pulpissimo/fpga/pulpissimo-zcu102/openocd-zcu102-digilent-jtag-hs2.cfg
 ```
 
 ![openocd](./images/6.png)
