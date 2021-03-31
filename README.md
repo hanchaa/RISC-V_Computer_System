@@ -132,7 +132,7 @@ pulpissimo/rtl/pulpissimo/safe_domain.sv
 pulpissimo를 새롭게 시작하려면 [이 저장소](https://github.com/pulp-platform/pulpissimo) 를 새롭게 clone 한 후 아래의 명령어를 실행하면 된다.
 
 ``` shell
-$ cd ../pulpissimo
+$ cd <new_pulpissimo_directory>
 $ ./update-ips
 ```
 
